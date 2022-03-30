@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:lost_and_found/components/custom_button.dart';
 import 'package:lost_and_found/globals.dart';
 import 'package:lost_and_found/components/custom_textfield.dart';
-import 'package:lost_and_found/screens/login_screen.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
-  static const String id = "signup_screen";
+
+class Login extends StatefulWidget {
+  const Login({ Key? key }) : super(key: key);
+  static const String id = "login_screen";
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: EdgeInsets.all(30),
         child: Column(
@@ -38,24 +38,20 @@ class _SignUpState extends State<SignUp> {
             CustomTextField(
               placeholer: 'Password',
             ),
-            SizedBox(height: 20),
-            CustomTextField(
-              placeholer: 'Confirm password',
-            ),
             SizedBox(height: 50),
             CustomButton(buttonText: 'SIGN UP', onClick: () {}),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
-                'Already have an account?',
+                'Dont have an account?',
                 style: kTextStyle2,
               ),
               TextButton(
                   child: Text(
-                    'Log in',
+                    'Sign Up',
                     style: TextStyle(color: primaryColor),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, Login.id);
+                    Navigator.pop(context);
                   })
             ])
           ],

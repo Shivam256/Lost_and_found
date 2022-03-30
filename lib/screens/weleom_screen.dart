@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lost_and_found/globals.dart';
 
 import 'package:lost_and_found/components/custom_button.dart';
+import './signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -46,7 +47,9 @@ class WelcomeScreen extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          CustomButton(buttonText: 'GET STARTED', onClick: (){})
+          CustomButton(buttonText: 'GET STARTED', onClick: (){
+            Navigator.pushNamed(context, SignUp.id);
+          })
         ],
       ),
     ));
