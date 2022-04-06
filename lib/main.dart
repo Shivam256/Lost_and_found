@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lost_and_found/screens/main_screen.dart';
 
 import 'package:lost_and_found/screens/weleom_screen.dart';
 import 'package:lost_and_found/screens/signup_screen.dart';
@@ -18,7 +19,8 @@ class LostAndFound extends StatelessWidget {
       routes: {
         WelcomeScreen.id:(context)=>WelcomeScreen(),
         SignUp.id:(context) => SignUp(),
-        Login.id:(context)=>Login()
+        Login.id:(context)=>Login(),
+        MainScreen.id:(context) => MainScreen()
       },
     );
   }
