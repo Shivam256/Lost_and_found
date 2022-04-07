@@ -18,6 +18,13 @@ const kTextStyle3 = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+
+const kTextStyle4 = TextStyle(
+  fontSize: 15,
+  color: Color(0xFF9FA5C0),
+  fontWeight: FontWeight.w400,
+);
+
 const primaryColor = Color(0xFF6C63FF);
 
 const kCustomInputDecoration = InputDecoration(

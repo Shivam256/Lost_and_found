@@ -8,6 +8,52 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class FoundItemScreen extends StatelessWidget {
   const FoundItemScreen({Key? key}) : super(key: key);
 
+  void handleClaimClick(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: Container(
+              color: Color(0xFF757575),
+              child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Divider(color: Color(0xFF3F3D56),thickness: 4,indent: 140,endIndent: 140,),
+                      SizedBox(height: 30,),
+                      Text(
+                        'Claim your object',
+                        textAlign: TextAlign.center,
+                        style: kTextStyle1,
+                      ),
+                      SizedBox(height: 10,),
+                      Text(
+                        'To avoid handling of an object to any malicious user we require a proof of ownership for you to make a successfull claim to this object\n\nA proff of claim can be anything that verifies you as a owner of this object. \nEg: Password of a phone, mobile number in phone. photo fo you using the object etc',
+                        style: kTextStyle4,
+                      ),
+                      // SizedBox(height: 10,),
+                      // Row(children: [
+                      //   Text('image')
+                      // ],),
+                      SizedBox(height: 30,),
+                      CustomButton(buttonText: 'CLAIM', onClick: (){})
+                    ],
+                  )),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -92,7 +138,7 @@ class FoundItemScreen extends StatelessWidget {
                   'Location',
                   style: kTextStyle1,
                 ),
-                     SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 Image(
@@ -101,7 +147,11 @@ class FoundItemScreen extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                CustomButton(buttonText: 'CLAIM', onClick: () {}),
+                CustomButton(
+                    buttonText: 'CLAIM',
+                    onClick: () {
+                      handleClaimClick(context);
+                    }),
               ],
             ),
           )
